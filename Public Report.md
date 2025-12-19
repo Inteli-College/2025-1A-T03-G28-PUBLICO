@@ -1,62 +1,64 @@
-# Email Data Extraction Agent – Public Report
+# AI-Driven Trade Allocation and Validation Platform – Public Report
 
-**Date:** October 9, 2025  
-**Authors:** Iago Tavares & Engineering Team  
+**Date:** October 2025  
+**Authors:** [Student Name] & Engineering Team  
 
 ---
 
 ## 1. Executive Summary
 
-The **Email Data Extraction Agent** project successfully automates the extraction and validation of financial information from unstructured email content.  
-Over the course of development, the team implemented a multi-agent pipeline combining natural language understanding and validation logic to ensure reliable, structured data from noisy text inputs.
+The **AI-Driven Trade Allocation and Validation Platform** project aims to automate and optimize the processing of trade recaps and allocation decisions in financial institutions and asset management environments.  
+The solution addresses critical operational risks associated with manual trade allocation workflows, such as misallocations, inconsistent data, delayed processing, and limited auditability.
 
-The system is now fully functional and integrated, achieving:
+Throughout the development process, the project delivered an end-to-end automated pipeline that integrates artificial intelligence, deterministic business rules, and mathematical optimization to ensure accurate, fair, and auditable trade allocation across multiple investment funds.
 
-- **Accurate JSON extraction** from heterogeneous email formats  
-- **Full pipeline orchestration** between Extractor, Verifier, and Orchestrator agents  
-- **Resilience to human error**, inconsistent formatting, and multilingual data  
-- **Structured and auditable results** ready for downstream financial systems  
+The platform achieves:
+
+- **Automated ingestion and structuring of trade recap data** from heterogeneous and semi-structured sources  
+- **Robust validation logic** to detect inconsistencies, missing fields, and non-compliant transactions  
+- **Optimization-based trade allocation**, ensuring fairness and adherence to predefined business constraints  
+- **Standardized and auditable outputs**, compatible with downstream financial and compliance systems  
 
 ---
 
 ## 2. Completed Sprint Summary
 
-| Sprint      | Goal                                  | Status      | Key Achievements                                                                 |
-|--------------|---------------------------------------|-------------|----------------------------------------------------------------------------------|
-| **Sprint 1** | Architecture Design                   | ✅ Completed | Defined multi-agent structure (Extractor / Verifier / Orchestrator). |
-| **Sprint 2** | ExtractorAgent Implementation          | ✅ Completed | Implemented TinyLlama model for entity recognition and JSON schema extraction. |
-| **Sprint 3** | VerifierAgent Development              | ✅ Completed | Added validation routines for numeric normalization, schema validation, and consistency checks. |
-| **Sprint 4** | Orchestration & Fallbacks             | ✅ Completed | Built the `Orchestrator` class coordinating agents, error handling, and recovery logic. |
-| **Sprint 5** | Testing, Documentation & Optimization | ✅ Completed | Validated pipeline with real-world emails; finalized README, diagrams, and user examples. |
+| Sprint | Goal                                   | Status       | Key Achievements                                                                 |
+|-------|----------------------------------------|--------------|----------------------------------------------------------------------------------|
+| **Sprint 1** | Business Analysis & Architecture Design | ✅ Completed | Defined end-to-end allocation pipeline, business rules, and system architecture. |
+| **Sprint 2** | Recap Ingestion & Parsing               | ✅ Completed | Implemented AI-based parsing to extract structured data from recap files.        |
+| **Sprint 3** | Validation & Consistency Checks         | ✅ Completed | Added deterministic rules for field validation, normalization, and compliance.  |
+| **Sprint 4** | Optimization Engine Integration         | ✅ Completed | Integrated optimization algorithms for fair and accurate trade allocation.      |
+| **Sprint 5** | Testing, Evaluation & Documentation     | ✅ Completed | Validated system with realistic scenarios and documented technical workflows.   |
 
 ---
 
 ## 3. Quality & Reliability
 
-- **Functional Coverage:** All agent layers tested for extraction, validation, and recovery.  
-- **Resilience:** Handles inconsistent patterns (commas, missing labels, mixed languages).  
-- **Security Measures:** Anti–prompt-injection rules and numeric coercion for safe parsing.  
-- **Auditability:** Clear JSON output and layered validation ensure transparency.  
+- **Functional Coverage:** All pipeline stages tested, from data ingestion to allocation output.  
+- **Operational Resilience:** Handles inconsistent formatting, missing fields, and heterogeneous data sources.  
+- **Governance & Auditability:** Maintains traceable allocation decisions and standardized outputs.  
+- **Compliance Readiness:** Business rules and validation layers support regulatory and internal controls.  
 
 ---
 
 ## 4. Technical Highlights
 
-1. **Agent-Based Architecture**  
-   - Three-layer system: Extractor → Verifier → Orchestrator.  
-   - Modular design enables maintainability and scalable future integration.
+1. **Modular, Service-Oriented Architecture**  
+   - Decoupled components for ingestion, validation, optimization, and reporting.  
+   - Facilitates scalability, maintainability, and system evolution.
 
-2. **AI-Powered Parsing**  
-   - Uses **TinyLlama** for natural language understanding.  
-   - Capable of identifying structured financial data even in human-written, messy text.
+2. **AI-Assisted Data Processing**  
+   - Natural Language Processing (NLP) used to interpret semi-structured recap data.  
+   - Flexible extraction logic resilient to format variations and human-generated inputs.
 
-3. **Verifier Logic**  
-   - Ensures numerical consistency and field validity (e.g., quantity > 0).  
-   - Automatically corrects decimal and separator inconsistencies.
+3. **Deterministic Validation Layer**  
+   - Business rules ensure data completeness, numerical consistency, and logical coherence.  
+   - Flags invalid or non-compliant transactions for review and correction.
 
-4. **Orchestration Flow**  
-   - Central control via the `Orchestrator` class.  
-   - Executes fallback and re-verification steps to guarantee final output integrity.
+4. **Optimization-Based Allocation Logic**  
+   - Mathematical optimization ensures fair and efficient distribution of trades across funds.  
+   - Allocation respects predefined constraints such as quantities, pricing, and allocation policies.
 
 ---
 
@@ -64,39 +66,7 @@ The system is now fully functional and integrated, achieving:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Inteli-College/2025-1A-T03-G28-PUBLICO.git
-   cd email-data-extraction-agent
-
-
-2. **Create a Virtual Environment**
-   ```pytbashhon
-      python -m venv .venv
-      source .venv/bin/activate
-      pip install -r requirements.txt
-
-3. **Run the Orchestrator**
-   ```python
-      from orchestrator import Orchestrator
-      from agents import ExtractorAgent, VerifierAgent
-
-      email = """
-      COMPRA: NTN-B 15/08/2026
-      QTDE: 320.000
-      PU: 4.374,14
-      FIN: R$ 999.999,45
-      """
-
-      orchestrator = Orchestrator(ExtractorAgent(), VerifierAgent())
-      result = orchestrator.run(email)
-      print(result)
-
-## 6. Future Work
-
-Multi-language fine-tuning for English, Portuguese, and Spanish emails.
-
-Integration with corporate inbox APIs (e.g., Outlook, Gmail).
-
-Confidence scoring for extracted entities.
-
-Automatic classification of email types (purchase, sale, correction).
+   git clone https://github.com/[organization]/ai-trade-allocation-platform.git
+   cd ai-trade-allocation-platform
+```
 
